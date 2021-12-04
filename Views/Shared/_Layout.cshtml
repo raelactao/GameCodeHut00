@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale==1.0">
+    <title> Game Code Shop </title>
+    <link rel="stylesheet" href="~/lib/images/style.css">
+    <link href="https://fonts.googleapis.com/css2?
+	   family=poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="~/lib/images/logo.png" width="200px">
+
+
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a asp-controller="GCH" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="GCH" asp-action="Games">Games </a></li>
+                        <li><a asp-controller="GCH" asp-action="About">About </a></li>
+                        <li><a asp-controller="GCH" asp-action="Contact">Contact us </a></li>
+                        <li><partial name="_LoginPartial" /></li>
+                    </ul>
+                    <hr>
+
+                </nav>
+                <img src="~/lib/images/cart.png" width="30px" height="30px">
+                <img src="~/lib/images/menu.png" class="menu-icon" onclick="menutoggle()">
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted"> </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

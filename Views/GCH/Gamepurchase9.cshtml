@@ -1,0 +1,205 @@
+﻿@model GameCodeHut.Models.Order
+
+@using Microsoft.AspNetCore.Identity
+@using GameCodeHut.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale==1.0">
+    <title> Game Code Shop </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?
+	   family=poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+<body>
+
+
+    <!-------- single game details ------>
+    <div class="small-container single-game">
+        <div class="row">
+            <div class="col-2">
+                <img src="~/lib/images/game-9.jpg" width="100%">
+            </div>
+
+            <form method="post" asp-action="Gamepurchase9">
+                <div class="col-2">
+                    <p> Mobile Legends</p>
+                    <h1> Diamonds</h1>
+                    <h4>Diamonds and Game ID</h4>
+                    <select class="form-control" asp-for="Quantity">
+                        <option>Select Amount </option>
+                        <option>100 </option>
+                        <option>200 </option>
+                        <option>500 </option>
+                        <option>1000</option>
+
+                    </select>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        var user2 = await UserManager.GetUserAsync(User);
+                        <input type="hidden" asp-for="Customer" value="@user2.Name" />
+                    }
+                    else
+                    {
+                        <input type="hidden" asp-for="Customer" value="Guest" />
+                    }
+                    <input type="hidden" asp-for="Product" value="Diamonds" />
+                    <form>
+                        Game ID:
+                        <input asp-for="GameAcct" class="form-control">
+                        <span asp-validation-for="GameAcct" class="text-danger"></span>
+                    </form>
+                    <input type="submit" value="Purchase Now" class="btn"> </a>
+                    <h3> About Mobile Legends</h3>
+                    <br>
+                    <p>the brand new 5v5 MOBA showdown, and fight against real players! Choose your favorite heroes and build the perfect team with your comrades-in-arms! 10-second matchmaking, 10-minute battles. Laning, jungling, pushing, and teamfighting, all the fun of PC MOBA and action games in the palm of your hand!</p>
+
+                </div>
+            </form>
+                
+
+        </div>
+    </div>
+
+    <div class="small-container">
+        <div class=" row row-2">
+            <h2> Other Games </h2>
+        </div>
+    </div>
+
+
+
+    <!-----products---->
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+                <img src="~/lib/images/game-1.jpg">
+                <h4>League of Legends</h4>
+                <a asp-controller="GCH" asp-action="Gamepurchase" class="btn">Buy Codes Now </a>
+
+            </div>
+            <div class="col-4">
+                <img src="~/lib/images/game-7.jpg">
+                <h4>Rainbow 6 Siege</h4>
+                <a asp-controller="GCH" asp-action="Gamepurchase7" class="btn">Buy Codes Now </a>
+            </div>
+
+            <div class="col-4">
+                <img src="~/lib/images/game-3.jpg">
+                <h4>Apex Legends</h4>
+                <a asp-controller="GCH" asp-action="Gamepurchase3" class="btn">Buy Codes Now </a>
+            </div>
+
+            <div class="col-4">
+                <img src="~/lib/images/game-4.jpg">
+                <h4>Cyber Punk 2077</h4>
+                <a asp-controller="GCH" asp-action="Gamepurchase4" class="btn">Buy Codes Now </a>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!------- brands------->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="~/lib/images/logo2.png">
+                </div>
+
+                <div class="col-5">
+                    <img src="~/lib/images/logo3.png">
+                </div>
+
+                <div class="col-5">
+                    <img src="~/lib/images/logo4.png">
+                </div>
+
+                <div class="col-5">
+                    <img src="~/lib/images/logo5.png">
+                </div>
+
+                <div class="col-5">
+                    <img src="~/lib/images/logo6.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!----------- footer ----------->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3> Download Our Application </h3>
+                    <p> Download app for Android and ios mobile phone. </p>
+
+                    <div class="app-logo">
+                        <img src="~/lib/images/play-store.png">
+
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="~/lib/images/logo-red.png">
+
+                </div>
+
+                <div class="footer-col-3">
+                    <h3> Useful links  </h3>
+                    <ul>
+                        <li> Coupons</li>
+                        <li> Blog Post </li>
+                        <li> Refund Policy</li>
+                        <li> Join Affliliate </li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3> Follow us  </h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter </li>
+                        <li> Instagram</li>
+                        <li> Wechat </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr>
+            <p class="Copyright"> Copyright 2020 Game Code Hut</p>
+
+        </div>
+    </div>
+    <!-------------- js for toggle menu----------->
+    <script>
+        var MenuItems = document.ElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style, maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+</body>
+</html>
