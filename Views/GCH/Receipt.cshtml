@@ -1,0 +1,142 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Receipt</title>
+
+    <style type="text/css">
+
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            Line-height: 24px;
+            font-family: Arial, sans-serif;
+        }
+
+            .invoice-box table {
+                width: 100%;
+                line-height: inherit;
+                text-align: left;
+            }
+
+                .invoice-box table td {
+                    padding: 5px;
+                    vertical-alight: top;
+                }
+
+                .invoice-box table tr td:nth-child(2) {
+                    text-alight: right;
+                }
+
+                .invoice-box table tr.top table td {
+                    padding-bottom: 20px;
+                }
+
+                .invoice-box table tr.information table td {
+                    padding-bottom: 40px;
+                }
+
+                .invoice-box table tr.heading td {
+                    background: #eee;
+                    border-bottom: 1px #ebf2ff;
+                    front-weight: bold;
+                }
+
+                .invoice-box table tr.details td {
+                    padding-bottom: 20px;
+                }
+
+                .invoice-box table tr.item td {
+                    border-bottom: 1px solid #ebf2ff;
+                }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                <h4> Game Code Hut</h4>
+                            </td>
+                            Receipt # 123
+                            <br>
+                            Created: November 30, 2021
+                            <br>
+                        </tr>
+                    </table>
+    </div>
+    </td>
+    </tr>
+
+    <tr class="information">
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td>
+                        Game Code Hut <br>
+                        Phone: +9171234567
+                    </td>
+
+
+                <tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="heading">
+        <td>
+            Payment Method
+        </td>
+
+        <td>GCASH</td>
+
+    </tr>
+
+    <tr class="details">
+        <td> Credit Card Info </td>
+        <td> ***********789</td>
+    </tr>
+
+    <tr class="heading">
+        <td> Game </td>
+        <td> Valorant </td>
+    </tr>
+
+    <tr class="item">
+        <td> Amount </td>
+        <td> P1000</td>
+    </tr>
+
+    <tr class="item">
+        <td> Gamme ID </td>
+        <td> Budget Aceu #1111</td>
+    </tr>
+
+    <tr class="item">
+        <td>Game Code</td>
+        <td> 1F3G4HJ9843K</td>
+    </tr>
+
+
+
+    </table>
+    </div>
+
+    <center> <a href="games.html" class="btn">Buy More Codes </a> </center>
+
+</body>
+</html>

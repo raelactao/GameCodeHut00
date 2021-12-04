@@ -26,6 +26,12 @@ namespace GameCodeHut.Controllers
             return View();
         }
 
+        public IActionResult Receipt()
+        {
+            return View();
+        }
+
+
         public IActionResult Contact()
         {
             return View();
@@ -87,7 +93,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase2()
@@ -111,7 +117,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase2");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase3()
@@ -135,7 +141,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase3");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase4()
@@ -159,7 +165,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase4");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase5()
@@ -183,7 +189,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase5");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase6()
@@ -208,7 +214,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase6");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase7()
@@ -233,7 +239,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase7");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase8()
@@ -258,7 +264,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase8");
+            return RedirectToAction("Receipt");
         }
 
         public IActionResult Gamepurchase9()
@@ -283,7 +289,7 @@ namespace GameCodeHut.Controllers
             _context.Orders.Add(orderrec);
             _context.SaveChanges();
 
-            return RedirectToAction("Gamepurchase9");
+            return RedirectToAction("Receipt");
         }
     }
 }
